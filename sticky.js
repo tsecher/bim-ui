@@ -18,6 +18,29 @@
  *  			evt.ev_data.sticky.wrapper.setAttribute('data-sticky-parent-state', evt.ev_data.sticky.state.parent);
  *  		})
  *  });
+ *
+ *
+ *  Ex: de css :
+ *  [data-sticky-parent-state="screenInParent"]{
+ *       height: var(--stickyWrapperHeight);
+ *       [data-sticky-content]{
+ *           position: fixed;
+ *           top: var(--stickyContentTop);;
+ *           bottom: auto;
+ *       }
+ *   }
+ *
+ *  [data-sticky-parent-state="screenUnderParent"] {
+ *       height: var(--stickyWrapperHeight);
+ *
+ *       [data-sticky-content]{
+ *           position: absolute;
+ *           background: yellow;
+ *           bottom:0;
+ *           top: auto;
+ *       }
+ *
+ *   }
  */
 export class StickyOnScroll {
 
@@ -102,11 +125,11 @@ export class StickyOnScroll {
 	initConstants() {
 		this.wrapperTop = this.getOffset(this.$wrapper).top;
 		// this.wrapper.css('height', this.$content.outerHeight());
-		this.wrapper.style['--stickyWrapperHeight'] = this.$content.offsetHeight + 'px';
+		this.wrapper.style.setProperty('--stickyWrapperHeight', this.$content.offsetHeight + 'px');
 
 		this.initThresholds();
 		//this.content.css("top", this.destinationTop);
-		this.content.style['--stickyContentTop'] = this.destinationTop;
+		this.content.style.setProperty('--stickyContentTop',  this.destinationTop);
 	}
 
 	/**
@@ -738,3 +761,4 @@ export function stickMeOnScroll(element, options) {
 	const sticky = StickyOnScroll.getStickyByElement(element);
 	return sticky ? sticky : StickyOnScroll.create(element, options);
 }
+g
