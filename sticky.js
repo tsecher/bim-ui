@@ -761,4 +761,3 @@ export function stickMeOnScroll(element, options) {
 	const sticky = StickyOnScroll.getStickyByElement(element);
 	return sticky ? sticky : StickyOnScroll.create(element, options);
 }
-g
