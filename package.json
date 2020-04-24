@@ -1,11 +1,11 @@
 {
-  "name": "bim-ui",
+  "name": "bim-ui-tools",
   "version": "1.0.0",
   "description": "Provides ui tools",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsecher/bim-ui.git"
+    "url": "git+https://github.com/tsecher/bim-ui-tools.git"
   },
   "keywords": [
     "Bim",
@@ -14,7 +14,7 @@
   "author": "Thomas Sécher",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tsecher/bim-ui/issues"
+    "url": "https://github.com/tsecher/bim-ui-tools/issues"
   },
-  "homepage": "https://github.com/tsecher/bim-ui#readme"
+  "homepage": "https://github.com/tsecher/bim-ui-tools#readme"
 }
