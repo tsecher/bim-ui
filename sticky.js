@@ -166,7 +166,9 @@ export class StickyOnScroll {
 				}
 
 				const height = sticky.element.offsetHeight;
-				this.threshold += height;
+				if( this.option(StickyOnScrollKeys.options.behaviors.autoThreshold) ){
+					this.threshold += height;
+				}
 				this.destinationTop += height;
 			}
 		}
@@ -596,6 +598,7 @@ export class StickyOnScroll {
 			StickyOnScroll.defaultOptions[StickyOnScrollKeys.options.selector.wrapper] = '[data-sticky-wrapper]';
 			StickyOnScroll.defaultOptions[StickyOnScrollKeys.options.selector.content] = '[data-sticky-content]';
 			StickyOnScroll.defaultOptions[StickyOnScrollKeys.options.selector.parent] = '[data-sticky-parent]';
+			StickyOnScroll.defaultOptions[StickyOnScrollKeys.options.behaviors.autoThreshold] = true;
 		}
 	}
 
@@ -743,6 +746,7 @@ export const StickyOnScrollKeys = {
 		},
 		behaviors: {
 			matchMedia: 'match-media',
+			autoThreshold: 'auto-threshold',
 		}
 	},
 	parent: {
